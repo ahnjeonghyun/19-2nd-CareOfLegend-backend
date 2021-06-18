@@ -23,7 +23,7 @@ class BasketView(View):
         order = Order.objects.filter(user_id = users, order_status = STATUS_CART).first()
 
         result = [{
-               'product_id'        : cart_product.product.id,
+                'product_id'        : cart_product.product.id,
                 'product_name'     : cart_product.product.name,
                 'product_price'    : cart_product.product.price,
                 'product_image'    : cart_product.product.productimage_set.get(thumbnail_status = 1).image_url if cart_product.product.productimage_set.get(thumbnail_status = 1) else None,

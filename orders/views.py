@@ -63,7 +63,7 @@ class BasketView(View):
             order.shipment_cost = 0 if order.total_price >= FREE_SHIPPING_PRICE else SHIPMENT_COST
                 
             order.save()
-            return JsonResponse({'MESSAGE':'SUCCESS'},status = 200)
+            return JsonResponse({'MESSAGE':'SUCCESS'},status = 201)
         except Product.DoesNotExist:
             return JsonResponse({'MESSAGE':'INVALID PRODUCT'},status = 400)
         except KeyError:

@@ -69,7 +69,7 @@ class ProfileRegisterView(View):
             
             User.objects.filter(user_code=user.user_code).update(nickname=nickname, profile_image_url=url)
             
-            return JsonResponse({'message' : 'SUCCESS'}, status=200)
+            return JsonResponse({'message' : 'SUCCESS'}, status=201)
         
         except KeyError:
             return JsonResponse({'message' : 'KEY_ERROR'}, status=400)

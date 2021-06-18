@@ -95,7 +95,7 @@ class BasketDetailView(View):
             if order.cart_set.count() <= 0:
                 order.delete()
 
-            return JsonResponse({'MESSAGE':'SUCCESS'},status=200)
+            return JsonResponse({'MESSAGE':'SUCCESS'},status=204)
 
         except json.JSONDecodeError:
             return JsonResponse({'MESSAGE':'JSON DECODE ERROR'}, status=400) 
